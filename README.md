@@ -55,5 +55,5 @@ All of Verizy's document data extraction services reside on two endpoints mentio
 
 ### Making Sense of Extraction Response
 - The response will always be in *application/json* format.
-- The response would contain a `success` key denoting if the extarction process succeeded or not.
+- The response would contain a `success` key denoting if the extraction process succeeded or not.
 - The response would have other parameters specific to the document extracted.
