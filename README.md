@@ -6,7 +6,9 @@ All of Verizy's document data extraction services reside on two endpoints mentio
 
 ### 1. Extract
 #### URL
+```javascript
 /extract
+```
 #### Method
 `POST`
 #### Headers
