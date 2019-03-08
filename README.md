@@ -75,17 +75,16 @@ All of Verizy's document verification services reside on the following endpoint.
 *application/json*
 ```javascript
 {
-  “filePath”: URL_TO_THE_DOCUMENT,
-  “docType”: DOCTYPE_VALUE,
-  “verificationConfig”: PROVIDED_BY_VERIZY,
-  "userInfo”: {
-    “firstName”: “”,
-    “middleName”: “”,
-    “lastName”: “”,
-    “idNumber”: “”,
-    “url”: “”,
-    “dob”: “”,
-    “state”: “”
-	}
+  "filePath": URL_TO_THE_DOCUMENT,
+  "docType": DOCTYPE_VALUE,
+  "verificationConfig": PROVIDED_BY_VERIZY,
+  "userInfo": {
+    "firstName": FIRST_NAME,
+    "middleName": MIDDLE_NAME,
+    "lastName": LAST_NAME,
+    "idNumber": ID_NUMBER,
+    "dob": DATE_OF_BIRTH,
+    "state": STATE
+  }
 }
 ```
