@@ -1,6 +1,6 @@
 # Verizy - Supported MIME Types
 
-fileMIMEType | Extensions
+`fileMIMEType` | Extensions
 --- | ---
 `image/jpeg` | .jpg, .jpeg
 `image/png` | .png
