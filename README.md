@@ -16,7 +16,7 @@ All of Verizy's document data extraction services reside on two endpoints mentio
 ```
 #### Body
 *application/json*
-```
+```javascript
 {
   “filePath”: URL_TO_THE_DOCUMENT,
   “docType”: DOCTYPE_VALUE
