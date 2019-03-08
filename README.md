@@ -57,3 +57,35 @@ All of Verizy's document data extraction services reside on two endpoints mentio
 - The response will always be in *application/json* format.
 - The response would contain a `success` key denoting if the extraction process succeeded or not.
 - The response would have other parameters specific to the document extracted.
+
+## Verification Service
+All of Verizy's document verification services reside on the following endpoint. Document verification needs two inputs, the document as an image or a pdf and the user-entered details. Verizy will analyze, extract, and process the document and compare the extracted details with what’s entered by the user. The comparison result determines if the given information match, don’t match or if our algorithm is unsure. The unsure status is given only in situations where the algorithm isn’t able to extract and detect some of the details it needs to perform the verification.
+
+### 1. Verify
+#### URL
+`/verify`
+#### Method
+`POST`
+#### Headers
+```
+“Content-Type”: ”application/json”,
+“api-key”: API_KEY_PROVIDED_BY_VERIZY
+```
+#### Body
+*application/json*
+```javascript
+{
+  “filePath”: URL_TO_THE_DOCUMENT,
+  “docType”: DOCTYPE_VALUE,
+  “verificationConfig”: PROVIDED_BY_VERIZY,
+  "userInfo”: {
+    “firstName”: “”,
+    “middleName”: “”,
+    “lastName”: “”,
+    “idNumber”: “”,
+    “url”: “”,
+    “dob”: “”,
+    “state”: “”
+	}
+}
+```
