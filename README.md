@@ -6,9 +6,7 @@ All of Verizy's document data extraction services reside on two endpoints mentio
 
 ### 1. Extract
 #### URL
-```javascript
-/extract
-```
+`/extract`
 #### Method
 `POST`
 #### Headers
@@ -26,7 +24,7 @@ All of Verizy's document data extraction services reside on two endpoints mentio
 ```
 ### 2. Upload and Extract
 #### URL
-/upload-and-extract
+`/upload-and-extract`
 #### Method
 `POST`
 #### Headers
