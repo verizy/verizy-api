@@ -91,6 +91,6 @@ All of Verizy's document verification services reside on the following endpoint.
 ### Things to Note
 - The `userInfo` object in the request body will contain the user-entered information that the document needs to be verified against.
 - The `filePath` should always allow us to directly access the document.
-- The `dob` should always be sent in this format: *2000-01-24*.
+- The `dob` should always be sent in this format: *yyyy-MM-dd* e.g. *2000-01-24*.
 - The `state` should be the full state name.
 - The `verificationConfig` allows us to distinguish between the different verification business logics that we support. We will tailor one to your use case, if needed. Just contact us.
