@@ -46,6 +46,14 @@ All of Verizy's document data extraction services reside on two endpoints mentio
 “fileMIMEType”: MIME_TYPE_OF_THE_SENT_FILE
 “docType”:DOCKTYPE_VALUE
 ```
-> **Discussion**: If you send file, do not include base64File parameter and if you send base64File please include the fileMIMEType and do not include the file parameter.
+
+### Things to Note
+- If you send `file`, do not include `base64File` parameter and if you send `base64File` please include the `fileMIMEType` and do not include the `file` parameter.
+- `filePath`: Make sure the URL leads to the image or document resource directly without redirections.
+- `docType`: Mentioning the document type is important to detect the relevant document and the extraction of data.
+- `api-key`: This is important to gain access to our services and to track the usage.
 
 ### Making Sense of Extraction Response
+- The response will always be in *application/json* format.
+- The response would contain a `success` key denoting if the extarction process succeeded or not.
+- The response would have other parameters specific to the document extracted.
