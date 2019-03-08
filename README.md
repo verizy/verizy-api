@@ -1,5 +1,6 @@
 # Verizy API Documentation
 Documentation on [Verizy’s](https://verizy.ai) document extraction and verification API services.
+[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Verizy Logo"
 
 ## Extraction Service
 All of Verizy's document data extraction services reside on two endpoints mentioned below. One allows you to send a file URL and get the extracted information and the other lets you upload the document directly to us and get extracted information. The responses of both endpoints will be similar, it’s the mechanism of sending us the document that differs.
