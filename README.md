@@ -46,6 +46,6 @@ All of Verizy's document data extraction services reside on two endpoints mentio
 “fileMIMEType”: MIME_TYPE_OF_THE_SENT_FILE
 “docType”:DOCKTYPE_VALUE
 ```
-*_Discussion_: If you send file, do not include base64File parameter and if you send base64File please include the fileMIMEType and do not include the file parameter.*
+> **Discussion**: If you send file, do not include base64File parameter and if you send base64File please include the fileMIMEType and do not include the file parameter.
 
 ### Making Sense of Extraction Response
