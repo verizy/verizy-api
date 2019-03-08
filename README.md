@@ -48,9 +48,9 @@ All of Verizy's document data extraction services reside on two endpoints mentio
 ```
 
 ### Things to Note
-- If you send `file`, do not include `base64File` parameter and if you send `base64File` please include the `fileMIMEType` and do not include the `file` parameter. The supported `fileMIMEType` values are shown in [this table](https://github.com/verizy/verizy-api/SupportedMIMETypes.md).
+- If you send `file`, do not include `base64File` parameter and if you send `base64File` please include the `fileMIMEType` and do not include the `file` parameter. The supported `fileMIMEType` values are shown in [this table](https://github.com/verizy/verizy-api/blob/master/SupportedMIMETypes.md).
 - `filePath`: Make sure the URL leads to the image or document resource directly without redirections.
-- `docType`: Mentioning the document type is important to detect the relevant document and the extraction of data. The valid values of this key are mentioned in [this table](https://github.com/verizy/verizy-api/SupportedDocuments.md).
+- `docType`: Mentioning the document type is important to detect the relevant document and the extraction of data. The valid values of this key are mentioned in [this table](https://github.com/verizy/verizy-api/blob/master/SupportedDocuments.md).
 - `api-key`: This is important to gain access to our services and to track the usage.
 
 ### Making Sense of Extraction Response
