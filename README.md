@@ -61,7 +61,7 @@ All of Verizy's document data extraction services reside on two endpoints mentio
 ## Verification Service
 All of Verizy's document verification services reside on the following endpoint. Document verification needs two inputs, the document as an image or a pdf and the user-entered details. Verizy will analyze, extract, and process the document and compare the extracted details with what’s entered by the user. The comparison result determines if the given information match, don’t match or if our algorithm is unsure. The unsure status is given only in situations where the algorithm isn’t able to extract and detect some of the details it needs to perform the verification.
 
-### 1. Verify
+### Verify
 #### URL
 `/verify`
 #### Method
