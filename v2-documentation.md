@@ -27,12 +27,16 @@ All of Verizy's document data extraction services reside on two endpoints mentio
 ```
 ##### `DOCUMENT` Object
 The `DOCUMENT` object represents a single document, carries URLs for images of the document. These are the possible ways a `DOCUMENT` object could be constructed.
+
+a. One URL per document
 ```
 {
     "mainUrl": URL_OF_IMAGE,
     "type": DOCUMENT_TYPE_ENUM
 }
 ```
+
+b. Two URLs per document, one for front side and another for the back side of the document
 ```
 {
     "frontUrl": URL_OF_IMAGE,
