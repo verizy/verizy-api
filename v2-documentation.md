@@ -9,42 +9,55 @@ Verizy API service resides on the following URL.
 All of Verizy's document data extraction services reside on two endpoints mentioned below. One allows you to send a file URL and get the extracted information and the other lets you upload the document directly to us and get extracted information. The responses of both endpoints will be similar, it’s the mechanism of sending us the document that differs.
 
 ### 1. Extract
-#### URL
+#### Request
+##### URL
 `/extract`
-#### Method
+##### Method
 `POST`
-#### Headers
+##### Headers
 ```
 "Content-Type": "application/json",
-"api-key": API_KEY_PROVIDED_BY_VERIZY
+"api-key": "<API_KEY_PROVIDED_BY_VERIZY>"
 ```
-#### Body
+##### Body
 *application/json*
 ```javascript
-"document": { //DOCUMENT object type
-    ...
+"document": {
+    ... //DOCUMENT object
 }
 ```
-##### `DOCUMENT` Object
+#### Response
+*application/json*
+Success
+```
+{
+    "code": 2001,
+    "success": true,
+    "result": {
+        "requestId": "<REQUEST_ID_GENERATED_BY_VERIZY>"
+    }
+}
+```
+#### `DOCUMENT` Object
 The `DOCUMENT` object represents a single document, carries URLs for images of the document. These are the possible ways a `DOCUMENT` object could be constructed.
 
 a. One URL per document
 ```
 {
-    "mainUrl": URL_OF_IMAGE,
-    "type": DOCUMENT_TYPE_ENUM
+    "mainUrl": "<URL_OF_IMAGE>",
+    "type": "<DOCUMENT_TYPE_ENUM>"
 }
 ```
 
 b. Two URLs per document, one for front side and another for the back side of the document
 ```
 {
-    "frontUrl": URL_OF_IMAGE,
-    "backUrl": URL_OF_IMAGE,
-    "type": DOCUMENT_TYPE_ENUM
+    "frontUrl": "<URL_OF_IMAGE>",
+    "backUrl": "<URL_OF_IMAGE>",
+    "type": "<DOCUMENT_TYPE ENUM>"
 }
 ```
-##### `DOCUMENT_TYPE` Object
+##### `DOCUMENT_TYPE` ENUM
 | DOCUMENT_TYPE ENUM | Description |
 |--------------------|-------------|
 | `aadhaar` | Aadhaar Card |
