@@ -45,7 +45,16 @@ b. Two URLs per document, one for front side and another for the back side of th
 }
 ```
 ##### `DOCUMENT_TYPE` Object
-`aadhaar`, `pan`, `dl`, `voter_id`, `gst`, `form_16`, `itr`, `salary_slip`
+| DOCUMENT_TYPE ENUM | Description |
+|--------------------|-------------|
+| `aadhaar` | Aadhaar Card |
+| `pan` | PAN Card |
+| `dl` | Driver's License |
+| `voter_id` | Voter's ID Card |
+| `gst` | GST Registration Document (REG-06 & REG-25) |
+| `form_16` | Form 16 |
+| `itr` | Income Tax Return |
+| `salary_slip` | Salary Slip |
 
 ### Things to Note
 - If you send `file`, do not include `base64File` parameter and if you send `base64File` please include the `fileMIMEType` and do not include the `file` parameter. The supported `fileMIMEType` values are shown in [this table](https://github.com/verizy/verizy-api/blob/master/SupportedMIMETypes.md).
