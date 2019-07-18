@@ -25,7 +25,7 @@ All of Verizy's document data extraction services reside on two endpoints mentio
     ...
 }
 ```
-####DOCUMENT Object
+#### `DOCUMENT` Object
 The `DOCUMENT` object represents a single document, carries URLs for images of the document. These are the possible ways a `DOCUMENT` object could be constructed.
 ```
 {
