@@ -62,11 +62,11 @@ The `EXTRACTED_DATA` Object can be of various formats, depending on the `documen
 *Treat all parameters as optional.*
 
 ## Udyog Aadhaar
-`documentType: ua`
+`documentType: udyog_aadhaar`
 
 ```
 {
-    "documentType": "ua",
+    "documentType": "udyog_aadhaar",
     "udyogAadhaarId": "<UDYOG_AADHAAR_NUMBER>",
     "aadhaarId": "<AADHAAR_NUMBER>",
     "panId": "<PAN_ID>",
