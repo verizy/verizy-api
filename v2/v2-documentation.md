@@ -34,7 +34,7 @@ All of Verizy's document data extraction services reside on the endpoint mention
 ```
 #### Response
 *application/json*
-Success
+##### Success State
 ```javascript
 {
     "code": 2001,
@@ -44,6 +44,26 @@ Success
     }
 }
 ```
+##### Failure States
+**Discussion**: Treat `details` as optional as it would be sent only of the request had a body, it would be skipped otherwise. The `message` parameter gives a description of what went wrong.
+```
+{
+    "code": 1007,
+    "success": false,
+    "message": "Invalid or missing document type.",
+    "details": {
+        ... //Information about the data sent in body during the request.
+    }
+}
+```
+```
+{
+    "code": 1002,
+    "success": false,
+    "message": "Missing or empty keys!. Client needs to send all mandatory keys"
+}
+```
+
 **Discussion**: The response of `/extract` is just an acknowledgement that the request has been scheduled for immediate processing. The `requestId` will be the unique identifier for that request on Verizy. The webhook content would also contain the same `requestId`. The `success` key tells if the request was accepted successfully or not. The `code` key is used for debuggin.
 #### Webhook Response
 ##### Method
@@ -68,13 +88,13 @@ Success
 ```
 
 #### `EXTRACTED_DATA` Object
-*Success State*
+##### Success State
 ```javascript
 {
 	
 }
 ```
-*Failure State*
+##### Failure State
 ```javascript
 {
 	"success"
