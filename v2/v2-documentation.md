@@ -86,25 +86,10 @@ All of Verizy's document data extraction services reside on the endpoint mention
 	}
 }
 ```
-
-#### `EXTRACTED_DATA` Object
-`EXTRACTED_DATA` object is explained in detail [here](https://github.com/verizy/verizy-api/blob/master/v2/v2-extracted-data.md).
-
-#### `DOCUMENT` Object
-`DOCUMENT` object is explained in detail [here](https://github.com/verizy/verizy-api/blob/master/v2/v2-document.md).
-
-##### `DOCUMENT_TYPE` ENUM
-| DOCUMENT_TYPE ENUM | Description |
-|--------------------|-------------|
-| `aadhaar` | Aadhaar Card |
-| `pan` | PAN Card |
-| `dl` | Driver's License |
-| `voter_id` | Voter's ID Card |
-| `ua` | Udyog Aadhaar |
-| `gst` | GST Registration Document (REG-06 & REG-25) |
-| `form_16` | Form 16 |
-| `itr` | Income Tax Return |
-| `salary_slip` | Salary Slip |
+#### Miscellaneous
+- `EXTRACTED_DATA` object is explained in detail [here](https://github.com/verizy/verizy-api/blob/master/v2/v2-extracted-data.md).
+- `DOCUMENT` object is explained in detail [here](https://github.com/verizy/verizy-api/blob/master/v2/v2-document.md).
+- `DOCUMENT_TYPE` object is explained in detail [here](https://github.com/verizy/verizy-api/blob/master/v2/v2-supported-documents.md).
 
 ### Things to Note
 - If you send `file`, do not include `base64File` parameter and if you send `base64File` please include the `fileMIMEType` and do not include the `file` parameter. The supported `fileMIMEType` values are shown in [this table](https://github.com/verizy/verizy-api/blob/master/SupportedMIMETypes.md).
