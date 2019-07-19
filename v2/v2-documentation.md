@@ -44,15 +44,15 @@ Success
     }
 }
 ```
-**Discussion**: The response of `/extract` is just an acknowledgement that the request has been scheduled for immediate processing. The `requestId` will be the unique identifier for that request on Verizy. The webhook content would also contain the same `requestId`.
+**Discussion**: The response of `/extract` is just an acknowledgement that the request has been scheduled for immediate processing. The `requestId` will be the unique identifier for that request on Verizy. The webhook content would also contain the same `requestId`. The `success` key tells if the request was accepted successfully or not. The `code` key is used for debuggin.
 #### Webhook Response
 ##### Method
 `POST`
 ##### Headers
 ```javascript
 "Content-Type": "application/json",
-"api-key": "<API_KEY_PROVIDED_BY_VERIZY>"
 ```
+**Discussion**: There will be another header key carrying the token/API-key, as determined by the client as a form of authentication.
 ##### Body
 *application/json*
 ```javascript
@@ -97,7 +97,7 @@ b. Two URLs per document, one for front side and another for the back side of th
 {
     "frontUrl": "<URL_OF_IMAGE>",
     "backUrl": "<URL_OF_IMAGE>",
-    "type": "<DOCUMENT_TYPE ENUM>"
+    "documentType": "<DOCUMENT_TYPE ENUM>"
 }
 ```
 ##### `DOCUMENT_TYPE` ENUM
