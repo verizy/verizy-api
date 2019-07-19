@@ -1,12 +1,18 @@
 # Verizy V2 API Documentation
 Documentation on [Verizy’s](https://verizy.ai) V2 document extraction and verification API services.
 
+## What's new in V2?
+- All `/extract` and `/verify` requests are queued by Verizy and are handled asynchronously.
+- Results of all requests are pushed out using webhooks registered with us.
+- Webhooks that are authenticated using a token provided by the client are supported.
+- Only secure Webhooks that use a TLS connections over https are supported.
+
 ## Base URL
 Verizy API service resides on the following URL.
 `https://api2.verizy.ai/v2`
 
 ## Extraction Service
-All of Verizy's document data extraction services reside on two endpoints mentioned below. One allows you to send a file URL and get the extracted information and the other lets you upload the document directly to us and get extracted information. The responses of both endpoints will be similar, it’s the mechanism of sending us the document that differs.
+All of Verizy's document data extraction services reside on the endpoint mentioned below. Data extraction is performed using our proprietary character recognition engine, developed and trained specifically for the documents we support. The data given out is structured, and depends on the document that is being extracted.
 
 ### 1. Extract
 #### Request
@@ -15,7 +21,7 @@ All of Verizy's document data extraction services reside on two endpoints mentio
 ##### Method
 `POST`
 ##### Headers
-```
+```javascript
 "Content-Type": "application/json",
 "api-key": "<API_KEY_PROVIDED_BY_VERIZY>"
 ```
@@ -29,7 +35,7 @@ All of Verizy's document data extraction services reside on two endpoints mentio
 #### Response
 *application/json*
 Success
-```
+```javascript
 {
     "code": 2001,
     "success": true,
@@ -38,11 +44,33 @@ Success
     }
 }
 ```
+#### Webhook Response
+##### Method
+`POST`
+##### Headers
+```javascript
+"Content-Type": "application/json",
+"api-key": "<API_KEY_PROVIDED_BY_VERIZY>"
+```
+##### Body
+*application/json*
+```javascript
+{
+	"requestId": "5cdead43d9200d0018a60e84",
+	"completedTaskInfo": {
+		"success": true,
+		"extractedData": { //EXTRACTED_DATA object
+			...
+		}
+	}
+}
+```
+
 #### `DOCUMENT` Object
 The `DOCUMENT` object represents a single document, carries URLs for images of the document. These are the possible ways a `DOCUMENT` object could be constructed.
 
 a. One URL per document
-```
+```javascript
 {
     "mainUrl": "<URL_OF_IMAGE>",
     "type": "<DOCUMENT_TYPE_ENUM>"
@@ -50,7 +78,7 @@ a. One URL per document
 ```
 
 b. Two URLs per document, one for front side and another for the back side of the document
-```
+```javascript
 {
     "frontUrl": "<URL_OF_IMAGE>",
     "backUrl": "<URL_OF_IMAGE>",
