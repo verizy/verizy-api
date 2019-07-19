@@ -56,13 +56,27 @@ Success
 *application/json*
 ```javascript
 {
-	"requestId": "5cdead43d9200d0018a60e84",
+	"requestId": "<REQUEST_ID_GENERATED_BY_VERIZY>",
 	"completedTaskInfo": {
-		"success": true,
+		"success": true, //Task completion status
 		"extractedData": { //EXTRACTED_DATA object
 			...
 		}
 	}
+}
+```
+
+#### `EXTRACTED_DATA` Object
+*Success State*
+```javascript
+{
+	
+}
+```
+*Failure State*
+```javascript
+{
+	"success"
 }
 ```
 
@@ -73,7 +87,7 @@ a. One URL per document
 ```javascript
 {
     "mainUrl": "<URL_OF_IMAGE>",
-    "type": "<DOCUMENT_TYPE_ENUM>"
+    "documentType": "<DOCUMENT_TYPE_ENUM>"
 }
 ```
 
