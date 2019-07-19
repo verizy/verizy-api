@@ -88,38 +88,11 @@ All of Verizy's document data extraction services reside on the endpoint mention
 ```
 
 #### `EXTRACTED_DATA` Object
-##### Success State
-```javascript
-{
-	
-}
-```
-##### Failure State
-```javascript
-{
-	"success"
-}
-```
+`EXTRACTED_DATA` object is explained in detail [here](https://github.com/verizy/verizy-api/blob/master/v2/v2-extracted-data.md).
 
 #### `DOCUMENT` Object
-The `DOCUMENT` object represents a single document, carries URLs for images of the document. These are the possible ways a `DOCUMENT` object could be constructed.
+`DOCUMENT` object is explained in detail [here](https://github.com/verizy/verizy-api/blob/master/v2/v2-document.md).
 
-a. One URL per document
-```javascript
-{
-    "mainUrl": "<URL_OF_IMAGE>",
-    "documentType": "<DOCUMENT_TYPE_ENUM>"
-}
-```
-
-b. Two URLs per document, one for front side and another for the back side of the document
-```javascript
-{
-    "frontUrl": "<URL_OF_IMAGE>",
-    "backUrl": "<URL_OF_IMAGE>",
-    "documentType": "<DOCUMENT_TYPE ENUM>"
-}
-```
 ##### `DOCUMENT_TYPE` ENUM
 | DOCUMENT_TYPE ENUM | Description |
 |--------------------|-------------|
