@@ -85,21 +85,7 @@ All of Verizy's document data extraction services reside on the endpoint mention
 	}
 }
 ```
-## Miscellaneous
-- `EXTRACTED_DATA` object is explained in detail [here](https://github.com/verizy/verizy-api/blob/master/v2/v2-extracted-data.md).
-- `DOCUMENT` object is explained in detail [here](https://github.com/verizy/verizy-api/blob/master/v2/v2-document.md).
-- `DOCUMENT_TYPE` object is explained in detail [here](https://github.com/verizy/verizy-api/blob/master/v2/v2-supported-documents.md).
 
-### Things to Note
-- If you send `file`, do not include `base64File` parameter and if you send `base64File` please include the `fileMIMEType` and do not include the `file` parameter. The supported `fileMIMEType` values are shown in [this table](https://github.com/verizy/verizy-api/blob/master/SupportedMIMETypes.md).
-- `filePath`: Make sure the URL leads to the image or document resource directly without redirections.
-- `docType`: Mentioning the document type is important to detect the relevant document and the extraction of data. The valid values of this key are mentioned in [this table](https://github.com/verizy/verizy-api/blob/master/SupportedDocuments.md).
-- `api-key`: This is important to gain access to our services and to track the usage.
-
-### Making Sense of Extraction Response
-- The response will always be in *application/json* format.
-- The response would contain a `success` key denoting if the extraction process succeeded or not.
-- The response would have other parameters specific to the document extracted.
 
 ## Verification Service
 All of Verizy's document verification services reside on the following endpoint. Document verification needs two inputs, the document as an image or a pdf and the user-entered details. Verizy will analyze, extract, and process the document and compare the extracted details with what’s entered by the user. The comparison result determines if the given information match, don’t match or if our algorithm is unsure. The unsure status is given only in situations where the algorithm isn’t able to extract and detect some of the details it needs to perform the verification.
@@ -137,3 +123,8 @@ All of Verizy's document verification services reside on the following endpoint.
 - The `dob` should always be sent in this format: *yyyy-MM-dd* e.g. *2000-01-24*.
 - The `state` should be the full state name.
 - The `verificationConfig` allows us to distinguish between the different verification business logics that we support. We will tailor one to your use case, if needed. Just contact us.
+
+## Miscellaneous
+- `EXTRACTED_DATA` object is explained in detail [here](https://github.com/verizy/verizy-api/blob/master/v2/v2-extracted-data.md).
+- `DOCUMENT` object is explained in detail [here](https://github.com/verizy/verizy-api/blob/master/v2/v2-document.md).
+- `DOCUMENT_TYPE` object is explained in detail [here](https://github.com/verizy/verizy-api/blob/master/v2/v2-supported-documents.md).
