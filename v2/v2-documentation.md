@@ -27,8 +27,10 @@ All of Verizy's document data extraction services reside on the endpoint mention
 #### Body
 *application/json*
 ```javascript
-"document": {
-    ... //DOCUMENT object
+{
+	"document": {
+		... //DOCUMENT object
+	}
 }
 ```
 ### Response
