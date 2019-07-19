@@ -1,8 +1,10 @@
 # V2 Extracted Data
 
+The `EXTRACTED_DATA` Object can be of various formats, depending on the `documentType` the extracted data represents. The keys that represent similar data across all documents use the same key names. All the keys that represent unique data have their own key names. Treat all parameters as optional (could be `null` or not exist), as it depends on the success of extracton and the quality of the document.
+
 ## Aadhaar
 `documentType: aadhaar`
-Treat all parameters as optional.
+*Treat all parameters as optional.*
 ```
 {
     "documentType": "aadhaar",
@@ -17,7 +19,7 @@ Treat all parameters as optional.
 
 ## PAN Card
 `documentType: pan`
-Treat all parameters as optional.
+*Treat all parameters as optional.*
 ```
 {
     "documentType": "pan",
@@ -30,7 +32,7 @@ Treat all parameters as optional.
 
 ## Driver's License
 `documentType: dl`
-Treat all parameters as optional.
+*Treat all parameters as optional.*
 ```
 {
     "documentType": "dl",
@@ -45,7 +47,7 @@ Treat all parameters as optional.
 
 ## Voter's ID Card
 `documentType: voter_id`
-Treat all parameters as optional.
+*Treat all parameters as optional.*
 ```
 {
     "documentType": "voter_id",
@@ -57,7 +59,7 @@ Treat all parameters as optional.
 
 ## Udyog Aadhaar
 `documentType: ua`
-Treat all parameters as optional.
+*Treat all parameters as optional.*
 ```
 {
     "documentType": "ua",
