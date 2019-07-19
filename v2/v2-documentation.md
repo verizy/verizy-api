@@ -44,6 +44,7 @@ Success
     }
 }
 ```
+**Discussion**: The response of `/extract` is just an acknowledgement that the request has been scheduled for immediate processing. The `requestId` will be the unique identifier for that request on Verizy. The webhook content would also contain the same `requestId`.
 #### Webhook Response
 ##### Method
 `POST`
