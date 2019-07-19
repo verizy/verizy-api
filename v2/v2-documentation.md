@@ -14,27 +14,26 @@ Verizy API service resides on the following URL.
 ## Extraction Service
 All of Verizy's document data extraction services reside on the endpoint mentioned below. Data extraction is performed using our proprietary character recognition engine, developed and trained specifically for the documents we support. The data given out is structured, and depends on the document that is being extracted.
 
-### 1. Extract
-#### Request
-##### URL
+### Request
+#### URL
 `/extract`
-##### Method
+#### Method
 `POST`
-##### Headers
+#### Headers
 ```javascript
 "Content-Type": "application/json",
 "api-key": "<API_KEY_PROVIDED_BY_VERIZY>"
 ```
-##### Body
+#### Body
 *application/json*
 ```javascript
 "document": {
     ... //DOCUMENT object
 }
 ```
-#### Response
+### Response
 *application/json*
-##### Success State
+#### Success State
 ```javascript
 {
     "code": 2001,
@@ -44,7 +43,7 @@ All of Verizy's document data extraction services reside on the endpoint mention
     }
 }
 ```
-##### Failure States
+#### Failure States
 **Discussion**: Treat `details` as optional as it would be sent only of the request had a body, it would be skipped otherwise. The `message` parameter gives a description of what went wrong.
 ```
 {
@@ -65,15 +64,15 @@ All of Verizy's document data extraction services reside on the endpoint mention
 ```
 
 **Discussion**: The response of `/extract` is just an acknowledgement that the request has been scheduled for immediate processing. The `requestId` will be the unique identifier for that request on Verizy. The webhook content would also contain the same `requestId`. The `success` key tells if the request was accepted successfully or not. The `code` key is used for debuggin.
-#### Webhook Response
-##### Method
+### Webhook Response
+#### Method
 `POST`
-##### Headers
+#### Headers
 ```javascript
 "Content-Type": "application/json",
 ```
 **Discussion**: There will be another header key carrying the token/API-key, as determined by the client as a form of authentication.
-##### Body
+#### Body
 *application/json*
 ```javascript
 {
@@ -86,7 +85,7 @@ All of Verizy's document data extraction services reside on the endpoint mention
 	}
 }
 ```
-#### Miscellaneous
+## Miscellaneous
 - `EXTRACTED_DATA` object is explained in detail [here](https://github.com/verizy/verizy-api/blob/master/v2/v2-extracted-data.md).
 - `DOCUMENT` object is explained in detail [here](https://github.com/verizy/verizy-api/blob/master/v2/v2-document.md).
 - `DOCUMENT_TYPE` object is explained in detail [here](https://github.com/verizy/verizy-api/blob/master/v2/v2-supported-documents.md).
