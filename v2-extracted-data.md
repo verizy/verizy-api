@@ -4,7 +4,7 @@ The `EXTRACTED_DATA` Object can be of various formats, depending on the `documen
 
 ## Aadhaar
 `documentType: aadhaar`
-*Treat all parameters as optional.*
+
 ```
 {
     "documentType": "aadhaar",
@@ -16,10 +16,11 @@ The `EXTRACTED_DATA` Object can be of various formats, depending on the `documen
     'address': "<ADDRESS_OF_THE_DOCUMENT_HOLDER>"
 }  
 ```
+*Treat all parameters as optional.*
 
 ## PAN Card
 `documentType: pan`
-*Treat all parameters as optional.*
+
 ```
 {
     "documentType": "pan",
@@ -29,10 +30,11 @@ The `EXTRACTED_DATA` Object can be of various formats, depending on the `documen
     "fatherName": "<NAME_OF_THE_DOCUMENT_HOLDER'S_FATHER>",
 }  
 ```
+*Treat all parameters as optional.*
 
 ## Driver's License
 `documentType: dl`
-*Treat all parameters as optional.*
+
 ```
 {
     "documentType": "dl",
@@ -44,10 +46,11 @@ The `EXTRACTED_DATA` Object can be of various formats, depending on the `documen
     "state": "<STATE_IN_INDIA_THE_DL_BELONGS_TO>"
 }  
 ```
+*Treat all parameters as optional.*
 
 ## Voter's ID Card
 `documentType: voter_id`
-*Treat all parameters as optional.*
+
 ```
 {
     "documentType": "voter_id",
@@ -56,10 +59,11 @@ The `EXTRACTED_DATA` Object can be of various formats, depending on the `documen
     "guardianName": "<NAME_OF_THE_DOCUMENT_HOLDER'S_GUARDIAN>",
 }  
 ```
+*Treat all parameters as optional.*
 
 ## Udyog Aadhaar
 `documentType: ua`
-*Treat all parameters as optional.*
+
 ```
 {
     "documentType": "ua",
@@ -71,3 +75,4 @@ The `EXTRACTED_DATA` Object can be of various formats, depending on the `documen
     "enterpriseName": "<NAME_OF_THE_ENTERPRISE>"
 }  
 ```
+*Treat all parameters as optional.*
