@@ -153,3 +153,4 @@ All of Verizy's document verification services reside on the following endpoint.
 - `EXTRACTED_DATA` object is explained in detail [here](https://github.com/verizy/verizy-api/blob/master/v2/v2-extracted-data.md).
 - `DOCUMENT` object is explained in detail [here](https://github.com/verizy/verizy-api/blob/master/v2/v2-document.md).
 - `DOCUMENT_TYPE` object is explained in detail [here](https://github.com/verizy/verizy-api/blob/master/v2/v2-supported-documents.md).
+- `VERIFICATION_DETAILS` object is explained in detail [here](https://github.com/verizy/verizy-api/blob/master/v2/v2-verification-details.md).
