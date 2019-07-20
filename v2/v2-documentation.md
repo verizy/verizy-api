@@ -65,7 +65,7 @@ All of Verizy's document data extraction services reside on the endpoint mention
 }
 ```
 
-**Discussion**: The response of `/extract` is just an acknowledgement that the request has been scheduled for immediate processing. The `requestId` will be the unique identifier for that request on Verizy. The webhook content would also contain the same `requestId`. The `success` key tells if the request was accepted successfully or not. The `code` key is used for debuggin.
+**Discussion**: The response of `/extract` is just an acknowledgement that the request has been scheduled for immediate processing. The `requestId` will be the unique identifier for that request on Verizy. The `success` key tells if the request was accepted successfully or not. The `code` key is used for debuggin. The result of the requested process would be pushed to the client using webhooks. The eventual webhook content would also contain the same `requestId` in order to track the requests. 
 ### Webhook Response
 #### Method
 `POST`
@@ -90,9 +90,9 @@ All of Verizy's document data extraction services reside on the endpoint mention
 
 
 ## Verification Service
-All of Verizy's document verification services reside on the following endpoint. Document verification needs two inputs, the document as an image or a pdf and the user-entered details. Verizy will analyze, extract, and process the document and compare the extracted details with what’s entered by the user. The comparison result determines if the given information match, don’t match or if our algorithm is unsure. The unsure status is given only in situations where the algorithm isn’t able to extract and detect some of the details it needs to perform the verification.
+All of Verizy's document verification services reside on the following endpoint. Document verification needs two inputs, the document(s) and the verification details. Verizy will analyze, extract, and process the document and verify the same.
 
-### Verify
+### Request
 #### URL
 `/verify`
 #### Method
@@ -100,31 +100,54 @@ All of Verizy's document verification services reside on the following endpoint.
 #### Headers
 ```
 "Content-Type": "application/json",
-"api-key": API_KEY_PROVIDED_BY_VERIZY
+"api-key": "<API_KEY_PROVIDED_BY_VERIZY>"
 ```
 #### Body
 *application/json*
 ```javascript
 {
-  "filePath": URL_TO_THE_DOCUMENT,
-  "docType": DOCTYPE_VALUE,
-  "verificationConfig": PROVIDED_BY_VERIZY,
-  "userInfo": {
-    "firstName": FIRST_NAME,
-    "middleName": MIDDLE_NAME,
-    "lastName": LAST_NAME,
-    "idNumber": ID_NUMBER,
-    "dob": DATE_OF_BIRTH,
-    "state": STATE
-  }
+    "document": {
+        ... //DOCUMENT object
+    },
+    "verificationDetails": {
+	... //VERIFICATION_DETAILS object
+    },
+    "verificationConfig": "<VERIFICATION_CONFIG_ENUM_AS_GIVEN_BY_VERIZY>"
 }
 ```
-### Things to Note
-- The `userInfo` object in the request body will contain the user-entered information that the document needs to be verified against.
-- The `filePath` should always allow us to directly access the document.
-- The `dob` should always be sent in this format: *yyyy-MM-dd* e.g. *2000-01-24*.
-- The `state` should be the full state name.
-- The `verificationConfig` allows us to distinguish between the different verification business logics that we support. We will tailor one to your use case, if needed. Just contact us.
+### Response
+*application/json*
+#### Success State
+```javascript
+{
+    "code": 2001,
+    "success": true,
+    "result": {
+        "requestId": "<REQUEST_ID_GENERATED_BY_VERIZY>"
+    }
+}
+```
+#### Failure States
+**Discussion**: Treat `details` as optional as it would be sent only of the request had a body, it would be skipped otherwise. The `message` parameter gives a description of what went wrong.
+```
+{
+    "code": 1007,
+    "success": false,
+    "message": "Invalid or missing document type.",
+    "details": {
+        ... //Information about the data sent in body during the request.
+    }
+}
+```
+```
+{
+    "code": 1002,
+    "success": false,
+    "message": "Missing or empty keys!. Client needs to send all mandatory keys"
+}
+```
+
+**Discussion**: The response of `/verizy` is just an acknowledgement that the request has been scheduled for immediate processing. The `requestId` will be the unique identifier for that request on Verizy. The `success` key tells if the request was accepted successfully or not. The `code` key is used for debuggin. The result of the requested process would be pushed to the client using webhooks. The eventual webhook content would also contain the same `requestId` in order to track the requests.
 
 ## Miscellaneous
 - `EXTRACTED_DATA` object is explained in detail [here](https://github.com/verizy/verizy-api/blob/master/v2/v2-extracted-data.md).
